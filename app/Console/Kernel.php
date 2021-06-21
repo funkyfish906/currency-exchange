@@ -24,6 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(Commands\CurrencyExchangeRate\Update::class)->everyThirtyMinutes();
+        $schedule->command(Commands\CurrencyExchangeRate\Update::class)
+            ->everyThirtyMinutes()
+            ->withoutOverlapping();
     }
 }

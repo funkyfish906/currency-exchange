@@ -15,12 +15,12 @@ class OpenExchangeRatesService
     /**
      * @var string
      */
-    protected $baseUrl;
+    protected string $baseUrl;
 
     /**
      * @var string
      */
-    protected $appId;
+    protected string $appId;
 
     /**
      * OpenExchangeRatesService constructor.

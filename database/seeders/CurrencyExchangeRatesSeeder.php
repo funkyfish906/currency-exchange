@@ -21,7 +21,7 @@ class CurrencyExchangeRatesSeeder extends Seeder
             CurrencyExchangeRate::query()->create([
                 'base_currency_code' => $rates['base'],
                 'secondary_currency_code' => $key,
-                'rate' => round($value, 2),
+                'rate' => $value,
             ]);
         }
     }

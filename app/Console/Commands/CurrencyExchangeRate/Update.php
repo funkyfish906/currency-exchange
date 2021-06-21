@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Console\Commands\CurrencyExchangeRate;
 
 use App\Facades\OpenExchangeRatesFacade;
@@ -38,11 +36,10 @@ class Update extends Command
 
                 $currentRate->update([
                     'prev_rate' => DB::raw('rate'),
-                    'rate' => round($value, 2),
+                    'rate' => $value,
                 ]);
-
             } catch (Throwable $e) {
-                Log::error($e->getMessage());
+                Log::error("[$key]".$e->getMessage());
             }
         }
     }

@@ -17,8 +17,8 @@ class CreateCurrencyExchangeRatesTable extends Migration
             $table->id();
             $table->string('base_currency_code', 3)->index();
             $table->string('secondary_currency_code', 3)->index();
-            $table->unsignedDouble('rate');
-            $table->unsignedDouble('prev_rate')->nullable();
+            $table->unsignedDouble('rate', 10, 2);
+            $table->unsignedDouble('prev_rate', 10, 2)->nullable();
             $table->timestamps();
 
             $table->unique(
